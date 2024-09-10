@@ -5,9 +5,7 @@
 // #
 // ############################################################################
 
-
-
-#include "lunasea.h"
+#include "main.h"
 
 int main(int argc, char* argv[]) {
     SDL_Window* window = NULL;
@@ -54,7 +52,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Load the image (replace with your actual image path)
-    imageSurface = IMG_Load("./sprites/resolution-test-360.png");
+    imageSurface = IMG_Load("./gfx/resolution-test-360.png");
     if (imageSurface == NULL) {
         printf("IMG_Load Error: %s\n", IMG_GetError());
         SDL_DestroyRenderer(renderer);

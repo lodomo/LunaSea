@@ -14,9 +14,13 @@
 #
 ###############################################################################
 
+# Name of the program (executable file to be generated)
+PROGRAM = lunasea
+
 # Directories
 SRC_DIR = src
 OBJ_DIR = obj
+GFX_DIR = gfx
 
 # Source files
 CSRCS = $(wildcard $(SRC_DIR)/*.c)
@@ -31,11 +35,10 @@ CFLAGS = -Wall -Wextra -Wshadow -Wunreachable-code \
          -Wunsafe-loop-optimizations -Wuninitialized -Werror \
          -Wno-unused-parameter -Wno-string-compare -Wno-stringop-overflow \
          -Wno-stringop-overread -Wno-stringop-truncation \
-         `sdl2-config --cflags`  # Correctly use SDL2 flags
-LIBS = `sdl2-config --libs` -lSDL2_image  # Correctly link SDL2 libraries
+         `sdl2-config --cflags`
+LIBS = `sdl2-config --libs` -lSDL2_image
 DFLAGS = -g -DNOISY_DEBUG
 
-PROGRAM = lunasea
 CC = gcc
 TAR_FILE = ${PROGRAM}.tar.gz
 
@@ -53,10 +56,9 @@ $(PROGRAM): $(OBJS)
 
 clean:
 	rm -f $(PROGRAM) $(OBJS) *~ \#*
-	rm -f *.output *.error
 
 tar:
-	tar -cvaf ${TAR_FILE} *.c [Mm]akefile
+	tar -cvaf ${TAR_FILE} $(SRC_DIR) $(HSRCS) Makefile
 
 git:
 	git add . 
