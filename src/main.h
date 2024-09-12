@@ -5,22 +5,14 @@
 // #
 // ############################################################################
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <stdio.h>
+#ifndef MAIN_H
+#define MAIN_H
 
-// Define internal resolution (1920 / 3 = 640, 1080 / 3 = 360)
-#define INTERNAL_WIDTH 640
-#define INTERNAL_HEIGHT 360
+#include "common.h"
+#include "defs.h"
+#include "init.h"
 
-#define TRUE 1
-#define FALSE 0
+int main(int argc, char *argv[]);
+void cleanUp();
 
-typedef struct {
-    SDL_Window *window;
-    SDL_Renderer *renderer;
-    SDL_Texture *texture;
-    SDL_Surface *imageSurface;
-    SDL_Event event;
-} Lunasea;
-
+#endif // MAIN_H
