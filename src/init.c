@@ -7,7 +7,7 @@
 
 #include "init.h"
 
-void initSDL() {
+void initSDL(void) {
     // Initialize SDL2
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         // If initialization fails, print an error message
@@ -16,7 +16,7 @@ void initSDL() {
     }
 }
 
-void initIMG() {
+void initIMG(void) {
     // Initialize SDL2_image for loading images
     if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
         printf("IMG_Init Error: %s\n", IMG_GetError());
@@ -25,7 +25,7 @@ void initIMG() {
     }
 }
 
-SDL_Window * createWindow() {
+SDL_Window * createWindow(void) {
     // Create a resizable window (not fullscreen initially)
     SDL_Window * window = SDL_CreateWindow("Resolution Test", SDL_WINDOWPOS_CENTERED,
                                           SDL_WINDOWPOS_CENTERED, INTERNAL_WIDTH,
@@ -52,16 +52,11 @@ SDL_Renderer * createRenderer(SDL_Window * window) {
     return renderer;
 }
 
-void initApp() {
+void initApp(void) {
     // Initialize the App struct
     app.window = createWindow();
     app.renderer = createRenderer(app.window);
-}
 
-void initCleanUp() {
-    // Clean up SDL2 and SDL2_image
-    SDL_DestroyRenderer(app.renderer);
-    SDL_DestroyWindow(app.window);
-    IMG_Quit();
-    SDL_Quit();
+    app.isRunning = TRUE;
+    app.isFullscreen = FALSE;
 }

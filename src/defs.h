@@ -22,9 +22,11 @@
 typedef struct {
     SDL_Window *window;
     SDL_Renderer *renderer;
-    SDL_Texture *texture;
-    SDL_Surface *imageSurface;
     SDL_Event event;
+    int width;
+    int height;
+    int isRunning;
+    int isFullscreen;
 } App;
 
 #endif // DEFS_H

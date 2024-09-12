@@ -69,4 +69,5 @@ debug: $(CSRCS)
 	$(CC) $(CFLAGS) $(DFLAGS) -o $(PROGRAM) $(CSRCS) $(LIBS)
 
 memcheck: $(PROGRAM)
-	valgrind --track-origins=yes --leak-check=full ./$(PROGRAM)
+	valgrind --leak-check=full --track-origins=yes --log-file=valgrind.log -s ./$(PROGRAM)
+

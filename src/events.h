@@ -5,16 +5,14 @@
 // #
 // ############################################################################
 
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef EVENTS_H
+#define EVENTS_H
 
 #include "common.h"
 #include "defs.h"
-#include "init.h"
-#include "events.h"
-#include "fps.h"
 
-int main(int argc, char *argv[]);
-void cleanUp(void);
+extern App app;
 
-#endif // MAIN_H
+void handleEvents(void);
+
+#endif // EVENTS_H
