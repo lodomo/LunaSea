@@ -87,7 +87,7 @@ int clock_cap_frames(Clock *clock) {
     gettimeofday(&clock->sleep_tracker, NULL);
     clock->sleep_time = get_elapsed_usec(&clock->render_start, &clock->sleep_tracker);
     while (clock->sleep_time < clock->frames_per_usec) {
-        usleep(10);
+        usleep(1);
         gettimeofday(&clock->sleep_tracker, NULL);
         clock->sleep_time = get_elapsed_usec(&clock->render_start, &clock->sleep_tracker);
     }
