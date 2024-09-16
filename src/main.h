@@ -12,9 +12,10 @@
 #include "defs.h"
 #include "init.h"
 #include "events.h"
-#include "fps.h"
+#include "game_clock.h"
 
 int main(int argc, char *argv[]);
+void initialize(void);
 void cleanUp(void);
 
 #endif // MAIN_H

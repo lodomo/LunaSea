@@ -11,8 +11,9 @@
 App app;
 
 int main(int argc, char *argv[]) {
-    memset(&app, 0, sizeof(App)); // Zero out the App struct
-    initApp();                    // From init.c
+    int color = 0;
+    initialize();
+
     // while running
     //  Handle Events Input
     //  Update Game Logic
@@ -22,7 +23,6 @@ int main(int argc, char *argv[]) {
     // Clean up
 
     // Main game loop
-    app.isRunning = TRUE;
     while (app.isRunning) {
         // Handle events (input)
         handleEvents(); // From events.c
@@ -32,7 +32,8 @@ int main(int argc, char *argv[]) {
         SDL_GetWindowSize(app.window, &app.width, &app.height);
 
         // Clear the screen
-        SDL_SetRenderDrawColor(app.renderer, 0, 0, 0, 255);
+        color = (color + 1) % 255;
+        SDL_SetRenderDrawColor(app.renderer, color, color, color, 255);
         SDL_RenderClear(app.renderer);
 
         // Render the image stretched to the entire window size
@@ -44,10 +45,19 @@ int main(int argc, char *argv[]) {
 
         // Present the rendered image
         SDL_RenderPresent(app.renderer);
+
+        // Update the game clock
+        clock_tick(&app.clock); // From game_clock.h
     }
 
     cleanUp(); // From init.c
     return EXIT_SUCCESS;
+}
+
+void initialize(void){
+    memset(&app, 0, sizeof(App)); // Zero out the App struct
+    initApp(&app);                // From init.h
+    clock_init(&app.clock, FPS);        // From game_clock.h, init the game clock
 }
 
 void cleanUp(void) {

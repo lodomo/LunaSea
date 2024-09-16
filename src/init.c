@@ -52,11 +52,16 @@ SDL_Renderer * createRenderer(SDL_Window * window) {
     return renderer;
 }
 
-void initApp(void) {
-    // Initialize the App struct
-    app.window = createWindow();
-    app.renderer = createRenderer(app.window);
+void initApp(App * app) {
+    if (app == NULL) {
+        printf("App struct is NULL\n");
+        exit(ERR_NULL_APP);
+    }
 
-    app.isRunning = TRUE;
-    app.isFullscreen = FALSE;
+    // Initialize the App struct
+    app->window = createWindow();
+    app->renderer = createRenderer(app->window);
+
+    app->isRunning = TRUE;
+    app->isFullscreen = FALSE;
 }
