@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
         SDL_GetWindowSize(app.window, &app.width, &app.height);
 
         // Clear the screen
-        color = (color + 1) % 255;
+        color = (color + 50) % 255;
         SDL_SetRenderDrawColor(app.renderer, color, color, color, 255);
         SDL_RenderClear(app.renderer);
 
