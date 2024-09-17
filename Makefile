@@ -54,7 +54,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 $(PROGRAM): $(OBJS)
 	$(CC) $(CFLAGS) -o $(@) $(OBJS) $(LIBS)
 
-clean:
+clean clena clea:
 	rm -f $(PROGRAM) $(OBJS) *~ \#*
 
 tar:

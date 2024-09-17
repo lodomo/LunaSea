@@ -25,11 +25,11 @@ void initIMG(void) {
     }
 }
 
-SDL_Window * createWindow(void) {
+SDL_Window *createWindow(void) {
     // Create a resizable window (not fullscreen initially)
-    SDL_Window * window = SDL_CreateWindow("Resolution Test", SDL_WINDOWPOS_CENTERED,
-                                          SDL_WINDOWPOS_CENTERED, INTERNAL_WIDTH,
-                                          INTERNAL_HEIGHT, SDL_WINDOW_RESIZABLE);
+    SDL_Window *window = SDL_CreateWindow(
+        "Resolution Test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+        INTERNAL_WIDTH, INTERNAL_HEIGHT, SDL_WINDOW_RESIZABLE);
     if (window == NULL) {
         printf("SDL_CreateWindow Error: %s\n", SDL_GetError());
         SDL_Quit();
@@ -39,9 +39,10 @@ SDL_Window * createWindow(void) {
     return window;
 }
 
-SDL_Renderer * createRenderer(SDL_Window * window) {
+SDL_Renderer *createRenderer(SDL_Window *window) {
     // Create a renderer
-    SDL_Renderer * renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    SDL_Renderer *renderer = SDL_CreateRenderer(
+        window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if (renderer == NULL) {
         printf("SDL_CreateRenderer Error: %s\n", SDL_GetError());
         SDL_DestroyWindow(window);
@@ -52,11 +53,13 @@ SDL_Renderer * createRenderer(SDL_Window * window) {
     return renderer;
 }
 
-void initApp(App * app) {
+void initApp(App *app) {
     if (app == NULL) {
         printf("App struct is NULL\n");
         exit(ERR_NULL_APP);
     }
+
+    clock_init(&app->clock);
 
     // Initialize the App struct
     app->window = createWindow();

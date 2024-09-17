@@ -9,7 +9,7 @@
 
 // This needs to be prettier and more robust
 // but this works for a placeholder for now
-void handleEvents(void) {
+void handle_input_events(void) {
     while (SDL_PollEvent(&app.event)) {
         if (app.event.type == SDL_QUIT) {
             app.isRunning = 0;

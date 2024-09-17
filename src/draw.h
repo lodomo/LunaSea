@@ -5,14 +5,14 @@
 // #
 // ############################################################################
 
-#ifndef EVENTS_H
-#define EVENTS_H
+#ifndef DRAW_H
+#define DRAW_H
 
-#include "common.h"
-#include "defs.h"
+#include <SDL2/SDL.h>
 
-extern App app;
+#define BLACK 0, 0, 0, 255
 
-void handle_input_events(void);
+void screen_clear(SDL_Renderer *renderer);
+void screen_update(SDL_Renderer *renderer); 
 
-#endif // EVENTS_H
+#endif // DRAW_H
