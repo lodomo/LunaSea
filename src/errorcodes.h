@@ -1,7 +1,7 @@
 // ############################################################################
 // #
 // #    Author:      Lorenzo D. Moon
-// #    Description: All the error codes for the program
+// #    Description: Error codes for the game, used for debugging crashes.
 // #
 // ############################################################################
 

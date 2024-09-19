@@ -8,8 +8,8 @@
 #ifndef DEFS_H
 #define DEFS_H
 
-#include "common.h"
 #include "clock.h"
+#include "common.h"
 
 // Game Resolution. Pixel Perfect scale for 1080p, 720p screens 16:9 screens.
 #define INTERNAL_WIDTH 640
@@ -18,10 +18,16 @@
 #define TRUE 1
 #define FALSE 0
 
-#define FPS 60 
+#define FPS 60
+
+typedef struct {
+    void (*logic)(void);
+    void (*draw)(void);
+} Delegate;
 
 typedef struct {
     Clock clock;
+    Delegate delegate;
     SDL_Window *window;
     SDL_Renderer *renderer;
     SDL_Event event;
@@ -30,6 +36,5 @@ typedef struct {
     int isRunning;
     int isFullscreen;
 } App;
-
 
 #endif // DEFS_H

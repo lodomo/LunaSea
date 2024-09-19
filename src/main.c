@@ -14,13 +14,13 @@ int main(int argc, char *argv[]) {
     initialize();
 
     while (app.isRunning) {
-        clock_update(&app.clock);   // From clock.h
-        clock_print(&app.clock);    // From clock.h
-        handle_input_events();      // From events.c
-        // GAME LOGIC HERE
-        screen_clear(app.renderer); // From draw.c
-        // DRAW HERE
-        screen_update(app.renderer); // From draw.c
+        clock_update(&app.clock);       // From clock.h
+        clock_print(&app.clock);        // From clock.h
+        handle_input_events();          // From events.c
+        app.delegate.logic();           // From delegate.c
+        screen_clear(app.renderer);     // From draw.c
+        app.delegate.draw();            // From delegate.c
+        screen_update(app.renderer);    // From draw.c
     }
 
     clean_up(); // From init.c
