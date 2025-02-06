@@ -1,0 +1,9 @@
+# Adventurers
+hp: 1 
+hp_max: 20
+strength: 10
+defense: 10
+exp_val: 10 
+happiness: 5 
+is_hostile: false
+ration_use: 1

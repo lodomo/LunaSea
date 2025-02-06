@@ -1,0 +1,10 @@
+# This is a header comment that should be skipped.
+key1: string
+key2: 123
+key3: true
+
+# Random Middle comment
+key1: string2
+key2: 456
+key3: false
+# This is a footer comment that should be skipped.

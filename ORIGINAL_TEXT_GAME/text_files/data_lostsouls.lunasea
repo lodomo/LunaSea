@@ -1,0 +1,22 @@
+# Lost souls
+hp: 10
+hp_max: 10
+strength: 1
+defense: 1
+exp_val: 2
+image: "test_image"
+is_positive: false
+happiness: 0
+ration_use: 1
+is_hostile: false
+
+hp: 10
+hp_max: 10
+strength: 1
+defense: 1
+exp_val: 2
+image: "test_image"
+is_positive: true
+happiness: 100 
+ration_use: 0
+is_hostile: false

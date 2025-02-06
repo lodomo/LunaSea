@@ -1,0 +1,143 @@
+#  List of monsters to encounter.
+name: Octopus
+hp: 5
+hp_max: 5
+strength: 5
+defense: 5
+exp_val: 10
+happiness: 10
+is_hostile: True
+ration_use: 1
+ration_val: 5
+
+name: Merman
+hp: 10
+hp_max: 10
+strength: 10
+defense: 10
+exp_val: 10
+happiness: 10
+is_hostile: True 
+ration_use: 2
+ration_val: 10
+
+name: Kraken
+hp: 50
+hp_max: 50
+strength: 15 
+defense: 10 
+exp_val: 100
+happiness: 0
+is_hostile: True
+ration_use: 5
+ration_val: 100
+
+name: Murder Shark
+hp: 10
+hp_max: 10
+strength: 5
+defense: 6
+exp_val: 5
+happiness: 0
+is_hostile: True
+ration_use: 5
+ration_val: 10
+
+name: Mermaid
+hp: 10
+hp_max: 10
+strength: 2
+defense: 2
+exp_val: 10
+happiness: 5
+is_hostile: True
+ration_use: 2
+ration_val: 10
+
+name: Blood Squid
+hp: 10
+hp_max: 10
+strength: 2
+defense: 2
+exp_val: 10
+happiness: 5
+is_hostile: True
+ration_use: 2
+ration_val: 10
+
+name: Seahorse
+hp: 1
+hp_max: 1
+strength: 1
+defense: 1
+exp_val: 1
+happiness: 100
+is_hostile: False 
+ration_use: 1 
+ration_val: 1
+
+name: Abyssal Shadow
+hp: 25 
+hp_max: 50
+strength: 20
+defense: 15
+exp_val: 200
+happiness: 10
+is_hostile: True 
+ration_use: 5 
+ration_val: 50
+
+name: Coral Golem
+hp: 20
+hp_max: 30
+strength: 10
+defense: 25
+exp_val: 150
+happiness: 40
+is_hostile: False
+ration_use: 3
+ration_val: 30
+
+name: Nether Serpent
+hp: 40
+hp_max: 80
+strength: 25
+defense: 20
+exp_val: 300
+happiness: 5
+is_hostile: True
+ration_use: 8
+ration_val: 80
+
+name: Leviathan Whelp
+hp: 50
+hp_max: 100
+strength: 30
+defense: 30
+exp_val: 500
+happiness: 20
+is_hostile: True
+ration_use: 10
+ration_val: 100
+
+name: Merfolk Guardian
+hp: 20
+hp_max: 40
+strength: 15
+defense: 10
+exp_val: 100
+happiness: 60
+is_hostile: False
+ration_use: 4
+ration_val: 40
+
+name: Siren
+hp: 25
+hp_max: 25
+strength: 5
+defense: 5
+exp_val: 75
+happiness: 80
+is_hostile: False
+ration_use: 0
+ration_val: 10 

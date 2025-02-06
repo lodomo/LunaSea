@@ -1,0 +1,7 @@
+# Default Stats for a new hero.
+hp_max: 20
+hp: 20
+strength: 5
+defense: 5
+exp_val: 0
+drops: None
