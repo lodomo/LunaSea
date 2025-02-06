@@ -17,13 +17,13 @@ int main(int argc, char *argv[]) {
         clock_update(&app.clock);       // From clock.h
         clock_print(&app.clock);        // From clock.h
         handle_input_events();          // From events.c
-        app.delegate.logic();           // From delegate.c
+        // app.delegate.logic();        
         screen_clear(app.renderer);     // From draw.c
-        app.delegate.draw();            // From delegate.c
+        // app.delegate.draw();        
         screen_update(app.renderer);    // From draw.c
     }
 
-    clean_up(); // From init.c
+    clean_up(); 
     return EXIT_SUCCESS;
 }
 
