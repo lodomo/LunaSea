@@ -13,7 +13,6 @@ from entity import Crewmate
 import random
 
 class Ship:
-    ''' Ship Class Does Thing '''
     def __init__(self, rations: int, speed: int):
         self.__rations = rations # Rations for the crew
         self.__speed = speed     # Speed of the ship

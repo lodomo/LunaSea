@@ -1,3 +1,2 @@
-/obj/
-/AsepriteArt/
-valgrind.log
+.vscode
+__pycache__
